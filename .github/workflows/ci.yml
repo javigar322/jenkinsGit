@@ -3,11 +3,10 @@ on: [push]
 jobs:
   job-name:
     runs-on: ubuntu-latest
-    - uses: actions/checkout@v2
-uses:
-  jenkinsci/jfr-container-action@master
-with:
-  command: run
-  jenkinsfile: Jenkinsfile
-  pluginstxt: plugins.txt
-
+    steps:
+      - uses: actions/checkout@v2
+      - uses: jenkinsci/jfr-container-action@master
+        with:
+          command: run
+          jenkinsfile: Jenkinsfile
+          pluginstxt: plugins.txt
